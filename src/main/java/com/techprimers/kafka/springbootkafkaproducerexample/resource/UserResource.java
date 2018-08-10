@@ -8,11 +8,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
+
 @RestController
 @RequestMapping("kafka")
 public class UserResource {
 
-    @Autowired
+    @Resource
     private KafkaTemplate<String, User> kafkaTemplate;
 
     private static final String TOPIC = "Kafka_Example";
